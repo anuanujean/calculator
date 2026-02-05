@@ -10,62 +10,41 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #0f0f1a;
-    background-image:
-        radial-gradient(ellipse at 20% 50%, rgba(88, 40, 200, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(40, 100, 220, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse at 60% 80%, rgba(200, 40, 140, 0.1) 0%, transparent 50%);
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 20px;
+    background: #1a1a2e;
 }
 
-/* ---- Tab Navigation ---- */
+/* ---- Navigation ---- */
 
-.tab-nav {
+.top-nav {
     display: flex;
-    gap: 4px;
-    margin-top: 40px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 6px;
+    background: #252540;
     border-radius: 14px;
-    padding: 4px;
+    padding: 5px;
 }
 
-.tab-btn {
-    padding: 10px 28px;
-    border: none;
+.nav-link {
+    padding: 10px 30px;
     border-radius: 10px;
-    background: transparent;
-    color: rgba(255, 255, 255, 0.5);
+    color: #9090b0;
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    letter-spacing: 0.3px;
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
-.tab-btn:hover {
-    color: rgba(255, 255, 255, 0.8);
+.nav-link:hover {
+    color: #e0e0ff;
+    background: #2e2e50;
 }
 
-.tab-btn.active {
-    background: rgba(120, 80, 255, 0.25);
-    color: #c4b5fd;
-    box-shadow: 0 2px 10px rgba(120, 80, 255, 0.2);
-}
-
-/* ---- Tab Content ---- */
-
-.tab-content {
-    display: none;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 40px 20px;
-}
-
-.tab-content.active {
-    display: flex;
+.nav-link.active {
+    background: #7c3aed;
+    color: #fff;
 }
 
 /* ---- Calculator ---- */
@@ -75,20 +54,15 @@ body {
     grid-template-columns: repeat(4, 85px);
     grid-template-rows: minmax(140px, auto) repeat(5, 85px);
     gap: 1px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #252540;
     border-radius: 24px;
     overflow: hidden;
-    box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .display {
     grid-column: 1 / -1;
-    background: rgba(0, 0, 0, 0.4);
+    background: #1e1e38;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
@@ -97,24 +71,20 @@ body {
     word-wrap: break-word;
     word-break: break-all;
     gap: 8px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .display .previous-operand {
-    color: rgba(255, 255, 255, 0.4);
+    color: #8888aa;
     font-size: 1.1rem;
-    font-weight: 300;
+    font-weight: 400;
     min-height: 1.4rem;
-    letter-spacing: 0.5px;
 }
 
 .display .current-operand {
-    color: #fff;
+    color: #ffffff;
     font-size: 2.8rem;
     font-weight: 300;
-    letter-spacing: 1px;
     min-height: 3.2rem;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .calculator > button {
@@ -125,21 +95,6 @@ body {
     border: none;
     outline: none;
     transition: all 0.15s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.calculator > button::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.calculator > button:active::after {
-    opacity: 1;
 }
 
 .calculator > button:active {
@@ -147,48 +102,46 @@ body {
 }
 
 .btn-number {
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
+    background: #2a2a48;
+    color: #ffffff;
 }
 
 .btn-number:hover {
-    background: rgba(255, 255, 255, 0.12);
+    background: #353560;
 }
 
 .btn-function {
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.7);
+    background: #32325a;
+    color: #c0c0e0;
     font-size: 1.15rem !important;
     font-weight: 500;
-    letter-spacing: 0.5px;
 }
 
 .btn-function:hover {
-    background: rgba(255, 255, 255, 0.18);
-    color: #fff;
+    background: #3d3d6a;
+    color: #ffffff;
 }
 
 .btn-operator {
-    background: rgba(120, 80, 255, 0.2);
-    color: #a78bfa;
+    background: #352a60;
+    color: #c4b5fd;
     font-size: 1.6rem !important;
 }
 
 .btn-operator:hover {
-    background: rgba(120, 80, 255, 0.35);
-    color: #c4b5fd;
+    background: #40307a;
+    color: #ddd0ff;
 }
 
 .btn-equals {
-    background: linear-gradient(135deg, #7c3aed, #6d28d9);
-    color: #fff;
+    background: #7c3aed;
+    color: #ffffff;
     font-size: 1.8rem !important;
     font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .btn-equals:hover {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    background: #8b5cf6;
 }
 
 .span-two {
@@ -200,26 +153,21 @@ body {
 .survey-card {
     width: 100%;
     max-width: 480px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #252540;
     border-radius: 24px;
     padding: 40px;
-    box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.5),
-        0 0 0 1px rgba(255, 255, 255, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .survey-card h2 {
-    color: #fff;
+    color: #ffffff;
     font-size: 1.6rem;
-    font-weight: 500;
-    margin-bottom: 6px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
 .survey-subtitle {
-    color: rgba(255, 255, 255, 0.4);
+    color: #9090b0;
     font-size: 0.95rem;
     margin-bottom: 32px;
 }
@@ -230,11 +178,10 @@ body {
 
 .form-group label {
     display: block;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.85rem;
+    color: #c0c0e0;
+    font-size: 0.9rem;
     font-weight: 500;
     margin-bottom: 8px;
-    letter-spacing: 0.3px;
 }
 
 .form-group input,
@@ -242,10 +189,10 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1e1e38;
+    border: 1px solid #3a3a60;
     border-radius: 12px;
-    color: #fff;
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     outline: none;
@@ -254,28 +201,27 @@ body {
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(255, 255, 255, 0.25);
+    color: #6060880;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: rgba(120, 80, 255, 0.5);
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 0 3px rgba(120, 80, 255, 0.1);
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
 }
 
 .form-group select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='rgba(255,255,255,0.4)' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23c0c0e0' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 14px center;
 }
 
 .form-group select option {
-    background: #1a1a2e;
-    color: #fff;
+    background: #252540;
+    color: #ffffff;
 }
 
 .form-group textarea {
@@ -288,20 +234,19 @@ body {
     padding: 14px;
     border: none;
     border-radius: 12px;
-    background: linear-gradient(135deg, #7c3aed, #6d28d9);
-    color: #fff;
+    background: #7c3aed;
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
-    letter-spacing: 0.3px;
     margin-top: 8px;
 }
 
 .submit-btn:hover {
-    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-    box-shadow: 0 4px 20px rgba(120, 80, 255, 0.3);
+    background: #8b5cf6;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
     transform: translateY(-1px);
 }
 
